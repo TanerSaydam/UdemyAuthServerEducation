@@ -8,6 +8,6 @@ namespace Core.Services
         Task<Response<TokenDto>> CreateToken(LoginDto loginDto);
         Task<Response<TokenDto>> CreateTokenByRefreshToken(string refreshToken);
         Task<Response<NoDataDto>> RevokeRefreshToken(string refreshToken);
-        Task<Response<ClientTokenDto>> CreateClientToken(ClientLoginDto clientLoginDto);
+        Response<ClientTokenDto> CreateClientToken(ClientLoginDto clientLoginDto);
     }
 }
