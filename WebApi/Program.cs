@@ -1,6 +1,12 @@
+using SharedLibrary.Configurations;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+ConfigurationManager configuration = builder.Configuration;
+
+builder.Services.Configure<CustomTokenOption>(configuration.GetSection("TokenOptions"));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
